@@ -10,9 +10,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<CompanyContext>();
 
-//builder.Services.AddScoped<IRepository<Department>, DepartmentRepository>();
-//builder.Services.AddScoped<IRepository<Employee>, EmployeeRepository>();
-builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
 var app = builder.Build();
 

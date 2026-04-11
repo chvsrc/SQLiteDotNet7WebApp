@@ -15,7 +15,10 @@ namespace AspMvcSqliteWebApplication.DatabaseContexts
         // special "local" folder for your platform.
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlite($"Data Source={Path.Join(path, "CompanySqliteDatabase.db")}");
+            // Console.WriteLine("Path :: " + path);
+            // options.UseSqlite($"Data Source={Path.Join(path, "CompanySqliteDatabase.db")}");
+            // options.UseSqlite($"Data Source={"/Users/venkat/Library/Application/CompanySqliteDatabase.db"}");
+            options.UseSqlite($"Data Source={"/Users/venkat/.local/share/CompanySqliteDatabase.db"}");
             options.UseLoggerFactory(LoggerFactory.Create(builder => builder.AddConsole()));
             options.EnableSensitiveDataLogging(); // Optional: This logs parameter values
         }
